@@ -1,0 +1,24 @@
+.dropdown-content {
+    display: none;
+    transition: all 0.3s ease;
+}
+.dropdown-content.show {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    .mobile-menu.open {
+        max-height: 1000px;
+    }
+    .dropdown-content {
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        padding-left: 1.5rem;
+    }
+}
