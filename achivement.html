@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himachal Pradesh Wushu Association</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- AOS CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/wave.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Top Navigation with Logo and Sponsors -->
+    <div class="bg-white shadow">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between py-4">
+                <!-- Left side: Logo area -->
+                <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0" data-aos="fade-right"
+                    data-aos-duration="1000">
+                    <img src="./assets/images/logo.png" alt="Logo" class="h-16 w-auto">
+                </div>
+
+                <!-- Middle: Association Name -->
+                <div class="w-full md:w-2/4 text-center mb-4 md:mb-0" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <h1 class="text-xl md:text-2xl font-bold text-blue-800">Himachal Pradesh Wushu Association</h1>
+                </div>
+
+                <!-- Right side: Sponsors -->
+                <div class="w-full md:w-1/4 flex justify-center md:justify-end space-x-2 mb-4 md:mb-0"
+                    data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="hidden md:flex space-x-2">
+                        <img src="./assets/images/sponsors/f1.png" alt="Sponsor 1" class="h-8 md:h-12 w-auto"
+                            data-aos="zoom-in" data-aos-delay="400">
+                        <img src="./assets/images/sponsors/f2.png" alt="Sponsor 2" class="h-8 md:h-12 w-auto"
+                            data-aos="zoom-in" data-aos-delay="500">
+                        <img src="./assets/images/sponsors/f3.png" alt="Sponsor 3" class="h-8 md:h-12 w-auto"
+                            data-aos="zoom-in" data-aos-delay="600">
+                        <img src="./assets/images/sponsors/f4.png" alt="Sponsor 4" class="h-8 md:h-12 w-auto"
+                            data-aos="zoom-in" data-aos-delay="700">
+                        <img src="./assets/images/sponsors/f5.png" alt="Sponsor 5" class="h-8 md:h-12 w-auto"
+                            data-aos="zoom-in" data-aos-delay="800">
+                    </div>
+                    <!-- Mobile sponsors slider -->
+                    <div class="flex md:hidden space-x-2 overflow-x-auto pb-2 w-full">
+                        <img src="./assets/images/sponsors/f1.png" alt="Sponsor 1" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f2.png" alt="Sponsor 2" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f3.png" alt="Sponsor 3" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f4.png" alt="Sponsor 4" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f5.png" alt="Sponsor 5" class="h-10 w-auto flex-shrink-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Menu -->
+    <nav class="bg-blue-700 text-white sticky top-0 z-20" data-aos="fade-down" data-aos-duration="800"
+        data-aos-delay="400">
+        <div class="container mx-auto px-4">
+            <!-- Mobile menu button -->
+            <div class="flex justify-between items-center lg:hidden">
+                <button id="mobile-menu-button" class="text-white p-3 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+                <span class="font-medium py-3">Menu</span>
+                <div class="w-6"></div> <!-- Empty div for balanced centering -->
+            </div>
+
+            <!-- Desktop & Mobile Menu -->
+            <div class="mobile-menu lg:block">
+                <ul class="flex flex-col lg:flex-row lg:justify-center">
+                    <!-- Home -->
+                    <li class="relative group">
+                        <a href="index.html"
+                            class="block px-4 py-3 hover:bg-blue-800 border-b border-blue-600 lg:border-none">Home</a>
+                    </li>
+
+                    <!-- About Us with Dropdown -->
+                    <li class="relative group dropdown">
+                        <button
+                            class="dropdown-button w-full text-left block px-4 py-3 hover:bg-blue-800 flex items-center justify-between border-b border-blue-600 lg:border-none">
+                            <span>About Us</span>
+                            <svg class="w-4 h-4 ml-1 transform transition-transform dropdown-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content lg:absolute lg:left-0 lg:mt-0 w-full lg:w-48 bg-white text-black lg:shadow-lg z-10">
+                            <a href="history.html"
+                                class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">History</a>
+                            <a href="about-us.html"
+                                class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">About Us</a>
+                        </div>
+                    </li>
+
+                    <!-- Wushu with Dropdown -->
+                    <li class="relative group dropdown">
+                        <button
+                            class="dropdown-button w-full text-left block px-4 py-3 hover:bg-blue-800 flex items-center justify-between border-b border-blue-600 lg:border-none">
+                            <span>Wushu</span>
+                            <svg class="w-4 h-4 ml-1 transform transition-transform dropdown-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content lg:absolute lg:left-0 lg:mt-0 w-full lg:w-48 bg-white text-black lg:shadow-lg z-10">
+                            <a href="sanda.html"
+                                class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Sanda</a>
+                            <a href="taolu.html"
+                                class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Taolu</a>
+                        </div>
+                    </li>
+
+                    <!-- Events -->
+                    <li class="relative group">
+                        <a href="#"
+                            class="block px-4 py-3 hover:bg-blue-800 border-b border-blue-600 lg:border-none">Events</a>
+                    </li>
+
+                    <!-- Gallery -->
+                    <li class="relative group">
+                        <a href="gallery.html"
+                            class="block px-4 py-3 hover:bg-blue-800 border-b border-blue-600 lg:border-none">Gallery</a>
+                    </li>
+
+                    <!-- Documents -->
+                    <li class="relative group">
+                        <a href="#"
+                            class="block px-4 py-3 hover:bg-blue-800 border-b border-blue-600 lg:border-none">Documents</a>
+                    </li>
+
+                    <!-- District Units/Clubs with Dropdown -->
+                    <li class="relative group dropdown">
+                        <button
+                            class="dropdown-button w-full text-left block px-4 py-3 hover:bg-blue-800 flex items-center justify-between border-b border-blue-600 lg:border-none">
+                            <span>District Units/Clubs</span>
+                            <svg class="w-4 h-4 ml-1 transform transition-transform dropdown-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content lg:absolute lg:left-0 lg:mt-0 w-full lg:w-48 bg-white text-black lg:shadow-lg z-10 lg:max-h-64 lg:overflow-y-auto">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Bilaspur</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Chamba</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Hamirpur</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Kangra</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Kinnaur</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Kullu</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Lahaul and
+                                Spiti</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Mandi</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Shimla</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Sirmaur</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Solan</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Una</a>
+                        </div>
+                    </li>
+
+                    <!-- Organization -->
+                    <li class="relative group">
+                        <a href="organisation.html"
+                            class="block px-4 py-3 hover:bg-blue-800 border-b border-blue-600 lg:border-none">Organization</a>
+                    </li>
+
+                    <!-- Achievements -->
+                    <li class="relative group">
+                        <a href="achivement.html"
+                            class="block px-4 py-3 hover:bg-blue-800 border-b border-blue-600 lg:border-none">Achievements</a>
+                    </li>
+
+                    <!-- Contact Us -->
+                    <li class="relative group">
+                        <a href="contact-us.html"
+                            class="block px-4 py-3 hover:bg-blue-800 border-b border-blue-600 lg:border-none">Contact
+                            Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-white rounded-lg shadow-md p-8 my-12">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">MEDALS TALLY AS OF 30TH JUNE, 2012</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Gold Medals -->
+            <div
+                class="bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div class="text-yellow-600 mb-4">
+                    <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L8 8H16L12 2Z M6 9V13A6 6 0 0018 13V9H6Z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-yellow-700 mb-2">GOLD MEDALS</h3>
+                <p class="text-4xl font-bold text-yellow-800">22</p>
+            </div>
+
+            <!-- Silver Medals -->
+            <div
+                class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div class="text-gray-500 mb-4">
+                    <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L8 8H16L12 2Z M6 9V13A6 6 0 0018 13V9H6Z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-600 mb-2">SILVER MEDALS</h3>
+                <p class="text-4xl font-bold text-gray-700">29</p>
+            </div>
+
+            <!-- Bronze Medals -->
+            <div
+                class="bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg p-6 text-center transform hover:scale-105 transition-transform duration-300 shadow-lg">
+                <div class="text-orange-600 mb-4">
+                    <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L8 8H16L12 2Z M6 9V13A6 6 0 0018 13V9H6Z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-orange-700 mb-2">BRONZE MEDALS</h3>
+                <p class="text-4xl font-bold text-orange-800">66</p>
+            </div>
+        </div>
+
+        <!-- Total Medals -->
+        <div class="mt-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-8 text-center shadow-xl">
+            <h3 class="text-3xl font-bold text-white mb-4">GRAND TOTAL</h3>
+            <p class="text-6xl font-bold text-white">117</p>
+            <p class="text-lg text-blue-100 mt-2">Total Medals</p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center text-blue-800 mb-4">LIST OF H.P. WUSHU PLAYERS SCHOLARSHIP</h1>
+        <h2 class="text-xl font-semibold text-center text-gray-700 mb-8">AWARDED BY NS NIS PATIALA 2005-2006 FOR
+            STATE/NATIONAL PLAYERS</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">S.NO</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">Name Of Player</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">Amount</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">1</td>
+                        <td class="px-6 py-4 text-sm">Hoshiyar Singh</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">2</td>
+                        <td class="px-6 py-4 text-sm">Jasveer Singh</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">3</td>
+                        <td class="px-6 py-4 text-sm">Prem singh</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">4</td>
+                        <td class="px-6 py-4 text-sm">Hitesh Azad</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">5</td>
+                        <td class="px-6 py-4 text-sm">Sourav Azad</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">6</td>
+                        <td class="px-6 py-4 text-sm">Jagreeti</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">7</td>
+                        <td class="px-6 py-4 text-sm">Preeti</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">8</td>
+                        <td class="px-6 py-4 text-sm">Manisha Azad</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">9</td>
+                        <td class="px-6 py-4 text-sm">Anupama Azad</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">10</td>
+                        <td class="px-6 py-4 text-sm">Versha</td>
+                        <td class="px-6 py-4 text-sm">6600</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-center text-blue-800 mt-12 mb-4">LIST OF H.P WUSHU PLAYERS & COACHES AWARDED
+            BY H.P. YOUTH AND SPORTS SERVICES DEPTT. AT DHARMSHALA</h2>
+        <p class="text-center text-gray-600 mb-8">Date: 25-02-2008</p>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">S.NO</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">Name Of Player</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">Player/Coach</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">1</td>
+                        <td class="px-6 py-4 text-sm">Monika Azad</td>
+                        <td class="px-6 py-4 text-sm">Player</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">2</td>
+                        <td class="px-6 py-4 text-sm">Varsha</td>
+                        <td class="px-6 py-4 text-sm">Player</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">3</td>
+                        <td class="px-6 py-4 text-sm">Arti</td>
+                        <td class="px-6 py-4 text-sm">Player</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">4</td>
+                        <td class="px-6 py-4 text-sm">Deepa Chauhan</td>
+                        <td class="px-6 py-4 text-sm">Player</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">5</td>
+                        <td class="px-6 py-4 text-sm">Yushu Walia</td>
+                        <td class="px-6 py-4 text-sm">Player</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">6</td>
+                        <td class="px-6 py-4 text-sm">Amar Singh</td>
+                        <td class="px-6 py-4 text-sm">Player</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">7</td>
+                        <td class="px-6 py-4 text-sm">Sh. P.N. Azad</td>
+                        <td class="px-6 py-4 text-sm">Coach</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-center text-blue-800 mt-12 mb-4">ACHIEVMENTS OF HIMACHAL PRADESH WUSHU TEAM
+            IN VARIOUS NATIONAL COMPETITION</h2>
+        <h3 class="text-xl font-semibold text-center text-gray-700 mb-8">2ND NORTH ZONE CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">CHAMAN LAL</td>
+                        <td class="px-6 py-4 text-sm">2001/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">JAI SINGH</td>
+                        <td class="px-6 py-4 text-sm">2001/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mb-8">SUB JUNIOR NATIONAL CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">KANIHYA LAL</td>
+                        <td class="px-6 py-4 text-sm">2003/HYDREABAD</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mb-8">3RD NORTH ZONE CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MONIKA AZAD</td>
+                        <td class="px-6 py-4 text-sm">2004/DELHI</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAKASHA</td>
+                        <td class="px-6 py-4 text-sm">2004/DELHI</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VARSHA</td>
+                        <td class="px-6 py-4 text-sm">2004/DELHI</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VIVEK CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2004/DELHI</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DURGA DUTT</td>
+                        <td class="px-6 py-4 text-sm">2004/DELHI</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">LALMAN</td>
+                        <td class="px-6 py-4 text-sm">2004/DELHI</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mb-8">13TH SENIOR NATIONAL CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">CHET RAM</td>
+                        <td class="px-6 py-4 text-sm">2004/JHARKHAND</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mb-8">ALL INDIA INVITATION WUSHU CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SOM CHAND</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DARSHAN LAL</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">LALMAN</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">YOG RAJ</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VIRENDER</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">LAXMI</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANGEETA</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MONIKA AZAD</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ANUPAMA AZAD</td>
+                        <td class="px-6 py-4 text-sm">2004/MANDI(H.P.)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">14TH SENIOR NATIONAL CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANGEETA</td>
+                        <td class="px-6 py-4 text-sm">2001/LUCKNOW</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MONIKA AZAD</td>
+                        <td class="px-6 py-4 text-sm">2001/LUCKNOW</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">4TH INTERNATIONAL JUNIOR WUSHU
+            CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">YASHU WALIA</td>
+                        <td class="px-6 py-4 text-sm">2005/LUCKNOW</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">HOSHIAR SINGH</td>
+                        <td class="px-6 py-4 text-sm">2005/LUCKNOW</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">51ST SCHOOL NATIONAL GAMES</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VARSHA</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DEEPA CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MONIKA</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ARTI VATSAL</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">YASHU WALIA</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">AMAR SINGH</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">4TH NORTH ZONE WUSHU CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">CHET RAM</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJ KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ARUN KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ROSHAN LAL</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">KAMLESH</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DURGA DUTT</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SOM CHAND</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">GURJEET SINGH</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">PREETI</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MONIKA AZAD</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJ PAL</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MONIKA</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJESH</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">GURJEET</td>
+                        <td class="px-6 py-4 text-sm">2006/LUDHIANA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">NATIONAL WUSHU CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DEEPA CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2006/JABALPUR(M.P)</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">15TH NATIONAL WUSHU CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DEEPA CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2006/JAIPUR</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VIRENDER</td>
+                        <td class="px-6 py-4 text-sm">2006/JAIPUR</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">7TH JUNIOR NATIONAL CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DEEPA CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VERSHA</td>
+                        <td class="px-6 py-4 text-sm">2006/CHANDIGARH</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">5TH NORTH ZONE WUSHU CHAMPIONSHIP</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJ PAL</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VARINDER KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MONIKA AZAD</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MANISHA AZAD</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">CHET RAM</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">AMIT</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DIXITA CHADDA</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ANUPAMA</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">KESRI LAL</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VIJAY KUMARI</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANGEETA KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ATENDER</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RANJANA</td>
+                        <td class="px-6 py-4 text-sm">2008/PANCHKULA</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">17TH SENIOR NATIONAL WUSHU CHAMPIONSHIP
+            NADED (M.S.)</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJNJANA</td>
+                        <td class="px-6 py-4 text-sm">2009</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANJAY</td>
+                        <td class="px-6 py-4 text-sm">2009</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">18TH SENIOR NATIONAL WUSHU CHAMPIONSHIP
+            RANCHI (JHARKHAND)</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR & PLACE</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANJAY</td>
+                        <td class="px-6 py-4 text-sm">2010</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">6TH NORTH ZONE CHAMPIONSHIP, BILASPUR
+            (17-20 MARCH 2010)</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden mb-8">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/WEIGHT</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <!-- Gold Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJESH KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/52KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ROSHAN LAL</td>
+                        <td class="px-6 py-4 text-sm">2010/60KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">NIRMAL SINGH</td>
+                        <td class="px-6 py-4 text-sm">2010/70KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANJAY KUMAR YADAV</td>
+                        <td class="px-6 py-4 text-sm">2010/75KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">JITENDER CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2010/80KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">GANGA RAM</td>
+                        <td class="px-6 py-4 text-sm">2010/90KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+
+                    <!-- Silver Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">KAMLESH KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/60KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VINOD KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/65KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">PREM SINGH</td>
+                        <td class="px-6 py-4 text-sm">2010/70KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">KAZI</td>
+                        <td class="px-6 py-4 text-sm">2010/75KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">BALBEER SINGH</td>
+                        <td class="px-6 py-4 text-sm">2010/90KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+
+                    <!-- Bronze Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">CHET RAM</td>
+                        <td class="px-6 py-4 text-sm">2010/48KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ANKUSH</td>
+                        <td class="px-6 py-4 text-sm">2010/48KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">NEEL KAMAL</td>
+                        <td class="px-6 py-4 text-sm">2010/52KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DALEEP KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/56KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAKESH KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/56KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">PUSHAP RAJ</td>
+                        <td class="px-6 py-4 text-sm">2010/65KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">AJAY KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/80KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">9TH SUB JUNIOR NATIONAL CHAMPIONSHIP
+            CHENNAI 2010</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden mb-8">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/WEIGHT</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAMESH</td>
+                        <td class="px-6 py-4 text-sm">2010/48KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">ABHINAS GULERIA</td>
+                        <td class="px-6 py-4 text-sm">2010/52KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">6TH NORTH ZONE CHAMPIONSHIP SANDA,
+            BILASPUR (17-20 MARCH 2010)</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden mb-8">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/WEIGHT</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <!-- Gold Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">KANCHANA</td>
+                        <td class="px-6 py-4 text-sm">2010/45KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SEEMA NEGI</td>
+                        <td class="px-6 py-4 text-sm">2010/48KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MANJU BALA</td>
+                        <td class="px-6 py-4 text-sm">2010/52KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SHIVA</td>
+                        <td class="px-6 py-4 text-sm">2010/60KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VARSHA</td>
+                        <td class="px-6 py-4 text-sm">2010/65KG</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+
+                    <!-- Silver Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">MADHUBALA</td>
+                        <td class="px-6 py-4 text-sm">2010/45KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">POOJA</td>
+                        <td class="px-6 py-4 text-sm">2010/48KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DIKSHA CHADDA</td>
+                        <td class="px-6 py-4 text-sm">2010/52KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">KAMLESH KUMARI</td>
+                        <td class="px-6 py-4 text-sm">2010/56KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">NEHA</td>
+                        <td class="px-6 py-4 text-sm">2010/60KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">PREETI</td>
+                        <td class="px-6 py-4 text-sm">2010/65KG</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+
+                    <!-- Bronze Medalist -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">LALIT KUMARI</td>
+                        <td class="px-6 py-4 text-sm">2010/56KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">TAOLU EVENTS MERIT LIST</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden mb-8">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/EVENT</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <!-- Gold Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">GURJEET SINGH</td>
+                        <td class="px-6 py-4 text-sm">2010/QIANGSHU</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJPAL</td>
+                        <td class="px-6 py-4 text-sm">2010/TAIJQUAN</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJPAL</td>
+                        <td class="px-6 py-4 text-sm">2010/TAIJIJIAN</td>
+                        <td class="px-6 py-4 text-sm">GOLD</td>
+                    </tr>
+
+                    <!-- Silver Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">LALIT SHARMA</td>
+                        <td class="px-6 py-4 text-sm">2010/DAOSHU</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJPAL</td>
+                        <td class="px-6 py-4 text-sm">2010/QUIANGSHU</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">GURJEET SINGH</td>
+                        <td class="px-6 py-4 text-sm">2010/NANGUN</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">HITESH AZAD</td>
+                        <td class="px-6 py-4 text-sm">2010/TAIJIQUAN</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SAURABH AZAD</td>
+                        <td class="px-6 py-4 text-sm">2010/NANDAO</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">TANISH KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/NANGUN</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">GURJEET SINGH</td>
+                        <td class="px-6 py-4 text-sm">2010/CHANGQUAN</td>
+                        <td class="px-6 py-4 text-sm">SILVER</td>
+                    </tr>
+
+                    <!-- Bronze Medalists -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SOURABH AZAD</td>
+                        <td class="px-6 py-4 text-sm">2010/DAOSHU</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">PRASHANT SHARMA</td>
+                        <td class="px-6 py-4 text-sm">2010/NANGQUAN</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">VIPAN KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/TAIJIQUAN</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SAURABH AZAD</td>
+                        <td class="px-6 py-4 text-sm">2010/NANDAO</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">AJAY KUMAR</td>
+                        <td class="px-6 py-4 text-sm">2010/NANGUN</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">HITESH AZAD</td>
+                        <td class="px-6 py-4 text-sm">2010/QUINGSHU</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">AJAY KAUSHAL</td>
+                        <td class="px-6 py-4 text-sm">2010/TAIJIJIAN</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">19TH SR. NATIONAL WUSHU CHAMPIONSHIP
+            HARIDWAR FEB. 2011</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/WEIGHT</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">JITENDER CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2012/80KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">INTERNATIONAL WUSHU WORLD CHAMPIONSHIP
+            HONG-HONG FEB.2012</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/WEIGHT</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANJAY YADAV</td>
+                        <td class="px-6 py-4 text-sm">2012/75KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">20TH SR. NATIONAL WUSHU CHAMPIONSHIP 27TH
+            – 31ST MARCH,2012 JAMMU & KASHMIR</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR/WEIGHT</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">RESULT</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">JITENDER CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2012/80KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SEEMA NEGI</td>
+                        <td class="px-6 py-4 text-sm">2012/48KG</td>
+                        <td class="px-6 py-4 text-sm">BRONZE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-center text-gray-700 mt-12 mb-8">H.P. WUSHU PLAYER SELECTED IN
+            INTERNATIONAL LEVEL</h3>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">NAME OF PLAYER</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">YEAR</th>
+                        <th class="px-6 py-3 text-left text-sm font-semibold">PLACE</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">CHET RAM</td>
+                        <td class="px-6 py-4 text-sm">2006</td>
+                        <td class="px-6 py-4 text-sm">15TH ASIAN GAMES DOHAQUATER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DURGA SINGH</td>
+                        <td class="px-6 py-4 text-sm">2006</td>
+                        <td class="px-6 py-4 text-sm">15TH ASIAN GAME DOHAQUATER</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">DEEPA CHAUHAN</td>
+                        <td class="px-6 py-4 text-sm">2008</td>
+                        <td class="px-6 py-4 text-sm">2ND SOUTH ASIAN,DHAKA</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">RAJNJANA</td>
+                        <td class="px-6 py-4 text-sm">2009</td>
+                        <td class="px-6 py-4 text-sm">10TH WORLD CHAMPIOMSHIP,CANADA</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-sm">SANJAY YADAV</td>
+                        <td class="px-6 py-4 text-sm">2009</td>
+                        <td class="px-6 py-4 text-sm">10TH WORLD CHAMPIONSHIP, CANADA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-800 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Logo and About -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="./assets/images/logo.png" alt="Logo" class="h-12 w-auto">
+                        <h3 class="text-lg font-bold">HP Wushu Association</h3>
+                    </div>
+                    <p class="text-blue-200 text-sm">Promoting excellence in Wushu across Himachal Pradesh through
+                        dedication, discipline and determination.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Events</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <div class="space-y-3">
+                        <p class="text-blue-200 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                            </svg>
+                            info@hpwushu.org
+                        </p>
+                        <p class="text-blue-200 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
+                            +91 98170-6411
+                        </p>
+                        <p class="text-blue-200 flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                            </svg>
+                            PN Azad,<br>
+                            Village - Bharari<br>
+                            Post Office - Chambi<br>
+                            Tehsil - Sunder Nagar<br>
+                            District - Mandi<br>
+                            Himachal Pradesh - 175018<br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-blue-700 pt-6">
+                <p class="text-center text-blue-200 text-sm">
+                    © 2024 Himachal Pradesh Wushu Association. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Carousel JavaScript -->
+    <script src="./assets/js/carousel.js"></script>
+
+    <!-- jQuery and AOS Initialization -->
+    <script src="./assets/js/custom.js"></script>
+</body>
+
+</html>
