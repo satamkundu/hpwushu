@@ -137,10 +137,10 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'mail.hpwushu.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = $to;
+    $mail->Username   = $from;
     $mail->Password   = 'W1F)T2QWl%B&P)e}';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
+    $mail->Port       = 465;
 
     $mail->SMTPDebug = 2;
     
