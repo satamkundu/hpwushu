@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .district-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .highlight-card {
+            animation: highlight-pulse 2s infinite alternate;
+        }
+        @keyframes highlight-pulse {
+            0% {
+                box-shadow: 0 0 0 0px rgba(239, 68, 68, 0.7);
+                transform: scale(1.03);
+            }
+            100% {
+                box-shadow: 0 0 20px 8px rgba(239, 68, 68, 0.5);
+                transform: scale(1.03);
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District Units - Himachal Pradesh Wushu Association</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- AOS CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/wave.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+    <!-- Top Navigation with Logo and Sponsors -->
+    <div class="bg-white shadow">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between py-4">
+                <!-- Left side: Logo area -->
+                <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0" data-aos="fade-right"
+                    data-aos-duration="1000">
+                    <img src="./assets/images/logo.png" alt="Logo" class="h-16 w-auto">
+                </div>
+
+                <!-- Middle: Association Name -->
+                <div class="w-full md:w-2/4 text-center mb-4 md:mb-0" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <h1 class="text-xl md:text-2xl font-bold text-red-700">Himachal Pradesh Wushu Association</h1>
+                </div>
+
+                <!-- Right side: Sponsors -->
+                <div class="w-full md:w-1/4 flex justify-center md:justify-end space-x-2 mb-4 md:mb-0"
+                    data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="hidden md:flex space-x-2">                        
+                        <img src="./assets/images/sponsors/f2.png" alt="Sponsor 2" class="h-8 md:h-12 w-auto" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="./assets/images/sponsors/wushu_association.png" alt="Sponsor 2" class="h-8 md:h-12 w-auto" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="./assets/images/sponsors/f4.png" alt="Sponsor 4" class="h-8 md:h-12 w-auto" data-aos="zoom-in" data-aos-delay="700">
+                        <img src="./assets/images/sponsors/f3.png" alt="Sponsor 3" class="h-8 md:h-12 w-auto" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="./assets/images/sponsors/khelo_india.svg" alt="Sponsor 3" class="h-8 md:h-12 w-auto" data-aos="zoom-in" data-aos-delay="600"/>
+                        <img src="./assets/images/sponsors/f5.png" alt="Sponsor 5" class="h-8 md:h-12 w-auto" data-aos="zoom-in" data-aos-delay="800">
+                        <img src="./assets/images/sponsors/f1.png" alt="Sponsor 1" class="h-8 md:h-12 w-auto" data-aos="zoom-in" data-aos-delay="400">
+                    </div>
+                    <!-- Mobile sponsors slider -->
+                    <div class="flex md:hidden space-x-2 overflow-x-auto pb-2 w-full">                        
+                        <img src="./assets/images/sponsors/f2.png" alt="Sponsor 2" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/wushu_association.png" alt="Sponsor 2" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f4.png" alt="Sponsor 4" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f3.png" alt="Sponsor 3" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/khelo_india.svg" alt="Sponsor 3" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f5.png" alt="Sponsor 5" class="h-10 w-auto flex-shrink-0">
+                        <img src="./assets/images/sponsors/f1.png" alt="Sponsor 1" class="h-10 w-auto flex-shrink-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Menu -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-20" data-aos="fade-down" data-aos-duration="800"
+        data-aos-delay="400">
+        <div class="container mx-auto px-4">
+            <!-- Mobile menu button -->
+            <div class="flex justify-between items-center lg:hidden">
+                <button id="mobile-menu-button" class="text-white p-3 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+                <span class="font-medium py-3">Menu</span>
+                <div class="w-6"></div> <!-- Empty div for balanced centering -->
+            </div>
+
+            <!-- Desktop & Mobile Menu -->
+            <div class="mobile-menu lg:block">
+                <ul class="flex flex-col lg:flex-row lg:justify-center">
+                    <!-- Home -->
+                    <li class="relative group">
+                        <a href="index.html"
+                            class="block px-4 py-3 hover:bg-slate-950 border-b border-slate-800 lg:border-none">Home</a>
+                    </li>
+
+                    <!-- About Us with Dropdown -->
+                    <li class="relative group dropdown">
+                        <button
+                            class="dropdown-button w-full text-left block px-4 py-3 hover:bg-slate-950 flex items-center justify-between border-b border-slate-800 lg:border-none">
+                            <span>About Us</span>
+                            <svg class="w-4 h-4 ml-1 transform transition-transform dropdown-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content lg:absolute lg:left-0 lg:mt-0 w-full lg:w-48 bg-white text-black lg:shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10">
+                            <a href="history.html" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">History</a>
+                            <a href="about-us.html" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">About Us</a>
+                        </div>
+                    </li>
+
+                    <!-- Wushu with Dropdown -->
+                    <li class="relative group dropdown">
+                        <button
+                            class="dropdown-button w-full text-left block px-4 py-3 hover:bg-slate-950 flex items-center justify-between border-b border-slate-800 lg:border-none">
+                            <span>Wushu</span>
+                            <svg class="w-4 h-4 ml-1 transform transition-transform dropdown-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content lg:absolute lg:left-0 lg:mt-0 w-full lg:w-48 bg-white text-black lg:shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10">
+                            <a href="sanda.html" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Sanda</a>
+                            <a href="taolu.html" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Taolu</a>
+                        </div>
+                    </li>
+
+                    <!-- Events -->
+                    <li class="relative group">
+                        <a href="#"
+                            class="block px-4 py-3 hover:bg-slate-950 border-b border-slate-800 lg:border-none">Events</a>
+                    </li>
+
+                    <!-- Gallery -->
+                    <li class="relative group">
+                        <a href="gallery.html"
+                            class="block px-4 py-3 hover:bg-slate-950 border-b border-slate-800 lg:border-none">Gallery</a>
+                    </li>
+
+                    <!-- Documents -->
+                    <li class="relative group">
+                        <a href="#"
+                            class="block px-4 py-3 hover:bg-slate-950 border-b border-slate-800 lg:border-none">Documents</a>
+                    </li>
+
+                    <!-- District Units/Clubs with Dropdown -->
+                    <li class="relative group dropdown">
+                        <button
+                            class="dropdown-button w-full text-left block px-4 py-3 hover:bg-slate-950 flex items-center justify-between border-b border-slate-800 lg:border-none text-red-400 font-semibold">
+                            <span>District Units/Clubs</span>
+                            <svg class="w-4 h-4 ml-1 transform transition-transform dropdown-icon" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="dropdown-content lg:absolute lg:left-0 lg:mt-0 w-full lg:w-48 bg-white text-black lg:shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10 lg:max-h-64 lg:overflow-y-auto">
+                            <a href="districts.html#bilaspur" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Bilaspur</a>
+                            <a href="districts.html#chamba" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Chamba</a>
+                            <a href="districts.html#hamirpur" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Hamirpur</a>
+                            <a href="districts.html#kangra" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Kangra</a>
+                            <a href="districts.html#kinnaur" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Kinnaur</a>
+                            <a href="districts.html#kullu" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Kullu</a>
+                            <a href="districts.html#lahaul-spiti" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Lahaul and Spiti</a>
+                            <a href="districts.html#mandi" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Mandi</a>
+                            <a href="districts.html#shimla" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Shimla</a>
+                            <a href="districts.html#sirmaur" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Sirmaur</a>
+                            <a href="districts.html#solan" class="block px-4 py-2 hover:bg-gray-200 border-b border-gray-100">Solan</a>
+                            <a href="districts.html#una" class="block px-4 py-2 hover:bg-gray-200">Una</a>
+                        </div>
+                    </li>
+
+                    <!-- Organization -->
+                    <li class="relative group">
+                        <a href="organisation.html"
+                            class="block px-4 py-3 hover:bg-slate-950 border-b border-slate-800 lg:border-none">Organization</a>
+                    </li>
+
+                    <!-- Achievements -->
+                    <li class="relative group">
+                        <a href="achivement.html"
+                            class="block px-4 py-3 hover:bg-slate-950 border-b border-slate-800 lg:border-none">Achievements</a>
+                    </li>
+
+                    <!-- Contact Us -->
+                    <li class="relative group">
+                        <a href="contact-us.html"
+                            class="block px-4 py-3 hover:bg-slate-950 border-b border-slate-800 lg:border-none">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Page Header -->
+        <div class="text-center mb-12" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-red-700">
+                District Units & Clubs
+            </h2>
+            <div class="w-24 h-1 bg-red-600 mx-auto mt-4 mb-6 rounded-full"></div>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                Directory of district-level wushu associations, clubs, and office bearers affiliated with the Himachal Pradesh Wushu Association.
+            </p>
+        </div>
+
+        <!-- Interactive Search & Filtering -->
+        <div class="max-w-md mx-auto mb-12 relative" data-aos="fade-up" data-aos-delay="200">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </span>
+            <input type="text" id="districtSearch" class="block w-full pl-10 pr-4 py-3 border border-slate-300 rounded-xl bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent shadow-sm transition-all" placeholder="Search districts or officials...">
+        </div>
+
+        <!-- Districts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="districtsGrid">
+            
+            <!-- Bilaspur Card -->
+            <div id="bilaspur" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="bilaspur shivpal minhans vikash kumar abhishek sharma">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Bilaspur</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Shivpal Minhans</span>
+                        <a href="tel:9816332828" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98163-32828
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Vikash Kumar</span>
+                        <a href="tel:9857753123" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98577-53123
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Abhishek Sharma</span>
+                        <a href="tel:9882845860" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98828-45860
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:bilaspurwushuassociation@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="bilaspurwushuassociation@gmail.com">bilaspurwushuassociation@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Chamba Card (Place-holder) -->
+            <div id="chamba" class="district-card bg-slate-50/60 rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between opacity-80" data-aos="fade-up" data-search-term="chamba club details updating coming soon">
+                <div class="bg-slate-700 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Chamba</h3>
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-center items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-700">Club Details Updating</h4>
+                        <p class="text-[11px] text-slate-500 mt-1 max-w-[200px] mx-auto">Active contact directory is currently being updated for this unit.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 px-6 py-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">State Support</span>
+                    <a href="mailto:hpwushu64011@gmail.com" class="font-medium text-slate-600 hover:text-red-700">hpwushu64011@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Hamirpur Card -->
+            <div id="hamirpur" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="hamirpur nand lal sharma dr virender kumar shashipal">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Hamirpur</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Nand Lal Sharma</span>
+                        <a href="tel:7018192909" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            70181-92909
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Dr. Virender Kumar</span>
+                        <a href="tel:9418392644" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            94183-92644
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Shashipal</span>
+                        <a href="tel:9816275705" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98162-75705
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:virenderthakur005@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="virenderthakur005@gmail.com">virenderthakur005@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Kangra Card -->
+            <div id="kangra" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="kangra dr chand bhardwaj pawan nag shashwat">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Kangra</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Dr Chand Bhardwaj</span>
+                        <a href="tel:8988900100" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            89889-00100
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Pawan Nag</span>
+                        <a href="tel:8988900100" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            89889-00100
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Shashwat</span>
+                        <a href="tel:8988900100" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            89889-00100
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:wushukangra@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="wushukangra@gmail.com">wushukangra@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Kinnaur Card (Place-holder) -->
+            <div id="kinnaur" class="district-card bg-slate-50/60 rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between opacity-80" data-aos="fade-up" data-search-term="kinnaur club details updating coming soon">
+                <div class="bg-slate-700 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Kinnaur</h3>
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-center items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-700">Club Details Updating</h4>
+                        <p class="text-[11px] text-slate-500 mt-1 max-w-[200px] mx-auto">Active contact directory is currently being updated for this unit.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 px-6 py-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">State Support</span>
+                    <a href="mailto:hpwushu64011@gmail.com" class="font-medium text-slate-600 hover:text-red-700">hpwushu64011@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Kullu Card -->
+            <div id="kullu" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="kullu puran chand luder chand rama sharma">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Kullu</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Puran Chand</span>
+                        <a href="tel:7018345683" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            70183-45683
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Luder Chand</span>
+                        <a href="tel:8219813023" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            82198-13023
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Rama Sharma</span>
+                        <a href="tel:9736240994" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            97362-40994
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:districtwushuassociation@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="districtwushuassociation@gmail.com">districtwushuassociation@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Lahaul and Spiti Card (Place-holder) -->
+            <div id="lahaul-spiti" class="district-card bg-slate-50/60 rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between opacity-80" data-aos="fade-up" data-search-term="lahaul and spiti lahaul spiti club details updating coming soon">
+                <div class="bg-slate-700 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase text-xs md:text-sm">Lahaul and Spiti</h3>
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-center items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-700">Club Details Updating</h4>
+                        <p class="text-[11px] text-slate-500 mt-1 max-w-[200px] mx-auto">Active contact directory is currently being updated for this unit.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 px-6 py-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">State Support</span>
+                    <a href="mailto:hpwushu64011@gmail.com" class="font-medium text-slate-600 hover:text-red-700">hpwushu64011@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Mandi Card -->
+            <div id="mandi" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="mandi p n azad khem singh hem raj">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Mandi</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Sh. P.N. Azad</span>
+                        <a href="tel:9817064011" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98170-64011
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Khem Singh</span>
+                        <a href="tel:8219764127" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            82197-64127
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Hem Raj</span>
+                        <a href="tel:9857497979" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98574-97979
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:mandiwushu@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="mandiwushu@gmail.com">mandiwushu@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Shimla Card -->
+            <div id="shimla" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="shimla pankaj sharma dr meera singh shorya sood">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Shimla</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Pankaj Sharma</span>
+                        <a href="tel:7018088583" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            70180-88583
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Dr. Meera Singh</span>
+                        <a href="tel:9418038465" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            94180-38465
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Sh. Shorya Sood</span>
+                        <a href="tel:8629067906" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            86290-67906
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:wushushimla@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="wushushimla@gmail.com">wushushimla@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Sirmaur Card (Sirmour) -->
+            <div id="sirmaur" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="sirmaur sirmour dr nps narang dr kuldeep k battan praveen kumar">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Sirmaur (Sirmour)</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Dr. NPS Narang</span>
+                        <a href="tel:9816100056" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98161-00056
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Dr. Kuldeep K Battan</span>
+                        <a href="tel:7889172462" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            78891-72462
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Praveen Kumar</span>
+                        <a href="tel:7589485167" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            75894-85167
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:sirmourwushu@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="sirmourwushu@gmail.com">sirmourwushu@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Solan Card -->
+            <div id="solan" class="district-card bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-search-term="solan anand singh shyam lal hardev singh">
+                <div class="bg-gradient-to-r from-red-800 to-red-600 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Solan</h3>
+                    <svg class="w-5 h-5 text-red-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="p-6 space-y-4 flex-grow">
+                    <!-- President -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">President</span>
+                        <span class="text-sm font-semibold text-slate-800">Anand Singh</span>
+                        <a href="tel:9816156881" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            98161-56881
+                        </a>
+                    </div>
+                    <!-- Secretary -->
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Gen. Secretary</span>
+                        <span class="text-sm font-semibold text-slate-800">Shyam Lal</span>
+                        <a href="tel:9418004569" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            94180-04569
+                        </a>
+                    </div>
+                    <!-- Treasurer -->
+                    <div class="pb-1">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Treasurer</span>
+                        <span class="text-sm font-semibold text-slate-800">Hardev Singh</span>
+                        <a href="tel:9625032743" class="text-xs text-red-600 hover:text-red-800 flex items-center mt-1 font-medium">
+                            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            96250-32743
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">Email ID</span>
+                    <a href="mailto:wushusolan@gmail.com" class="font-medium text-slate-600 hover:text-red-700 truncate max-w-[200px]" title="wushusolan@gmail.com">wushusolan@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Una Card (Place-holder) -->
+            <div id="una" class="district-card bg-slate-50/60 rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between opacity-80" data-aos="fade-up" data-search-term="una club details updating coming soon">
+                <div class="bg-slate-700 px-6 py-4 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold tracking-wider uppercase">Una</h3>
+                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-center items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-700">Club Details Updating</h4>
+                        <p class="text-[11px] text-slate-500 mt-1 max-w-[200px] mx-auto">Active contact directory is currently being updated for this unit.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-100 px-6 py-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                    <span class="font-bold text-slate-400 uppercase tracking-wider">State Support</span>
+                    <a href="mailto:hpwushu64011@gmail.com" class="font-medium text-slate-600 hover:text-red-700">hpwushu64011@gmail.com</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-950 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Logo and About -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="./assets/images/logo.png" alt="Logo" class="h-12 w-auto">
+                        <h3 class="text-lg font-bold">HP Wushu Association</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm">Promoting excellence in Wushu across Himachal Pradesh through
+                        dedication, discipline and determination.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-slate-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about-us.html" class="text-slate-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition">Events</a></li>
+                        <li><a href="gallery.html" class="text-slate-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="contact-us.html" class="text-slate-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <div class="space-y-3">
+                        <p class="text-slate-400 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                            </svg>
+                            hpwushu64011@gmail.com
+                        </p>
+                        <p class="text-slate-400 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
+                            9817064011
+                        </p>
+                        <p class="text-slate-400 flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                            </svg>
+                            PN Azad,<br>
+                            Village - Bharari<br>
+                            Post Office - Chambi<br>
+                            Tehsil - Sunder Nagar<br>
+                            District - Mandi<br>
+                            Himachal Pradesh - 175018<br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-slate-800 pt-6">
+                <p class="text-center text-slate-400 text-sm">
+                    © 2024 Himachal Pradesh Wushu Association. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery and AOS Initialization -->
+    <script src="./assets/js/custom.js"></script>
+
+    <!-- Page Specific Script -->
+    <script>
+        $(document).ready(function () {
+            // Live Search Logic
+            $('#districtSearch').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $('#districtsGrid .district-card').filter(function () {
+                    $(this).toggle($(this).attr('data-search-term').toLowerCase().indexOf(value) > -1);
+                });
+            });
+
+            // Handle Hash Highlight and Scroll
+            function highlightAndScroll() {
+                var hash = window.location.hash;
+                if (hash) {
+                    var targetId = hash.substring(1).toLowerCase();
+                    // Handle "sirmaur" vs "sirmour" hash
+                    if (targetId === "sirmour") {
+                        targetId = "sirmaur";
+                    } else if (targetId === "lahaul-and-spiti" || targetId === "lahaulandspiti") {
+                        targetId = "lahaul-spiti";
+                    }
+
+                    var $targetCard = $('#' + targetId);
+                    if ($targetCard.length) {
+                        // Clear active states
+                        $('.district-card').removeClass('highlight-card ring-4 ring-red-500 scale-[1.03] shadow-2xl');
+
+                        // Scroll smoothly
+                        $('html, body').animate({
+                            scrollTop: $targetCard.offset().top - 100
+                        }, 800);
+
+                        // Apply glow animation
+                        $targetCard.addClass('highlight-card ring-4 ring-red-500');
+
+                        // Remove glow animation after 4 seconds
+                        setTimeout(function () {
+                            $targetCard.removeClass('highlight-card ring-4 ring-red-500');
+                        }, 4000);
+                    }
+                }
+            }
+
+            // Execute on load and hash change
+            if (window.location.hash) {
+                setTimeout(highlightAndScroll, 300); // Small delay to let page load/AOS complete
+            }
+
+            $(window).on('hashchange', highlightAndScroll);
+        });
+    </script>
+</body>
+
+</html>
