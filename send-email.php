@@ -1,6 +1,11 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/vendor/autoload.php';
+
 // Allow only POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -124,24 +129,34 @@ $emailContent = '
 </html>
 ';
 
-// Setup email headers for sending
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= 'From: "HP Wushu Association" <' . $from . '>' . "\r\n";
-$headers .= 'Reply-To: "' . $name . '" <' . $email . '>' . "\r\n";
-$headers .= 'X-Mailer: PHP/' . phpversion();
+// Send using PHPMailer
+$mail = new PHPMailer(true);
 
-// Send using standard PHP mail() with envelope sender parameter
-if (mail($to, "HP Wushu Website Query: " . $subject, $emailContent, $headers, "-f" . $from)) {
+try {
+    // Server settings - use standard local mail transport
+    $mail->isMail();
+    
+    // Recipients
+    $mail->setFrom($from, 'HP Wushu Association');
+    $mail->addAddress($to);
+    $mail->addReplyTo($email, $name);
+    
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'HP Wushu Website Query: ' . $subject;
+    $mail->Body    = $emailContent;
+    $mail->AltBody = strip_tags($message);
+    
+    $mail->send();
     echo json_encode([
         'success' => true,
         'message' => 'Thank you! Your message has been sent successfully.'
     ]);
-} else {
+} catch (Exception $e) {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'We are sorry, but our mail server failed to deliver the message. Please try again later.'
+        'message' => 'We are sorry, but our mail server failed to deliver the message. Error details: ' . $mail->ErrorInfo
     ]);
 }
 ?>
