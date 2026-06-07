@@ -141,8 +141,6 @@ try {
     $mail->Password   = 'W1F)T2QWl%B&P)e}';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
-
-    $mail->SMTPDebug = 2;
     
     // Recipients
     $mail->setFrom($from, 'HP Wushu Association');
