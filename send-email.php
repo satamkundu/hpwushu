@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Content-Type: application/json; charset=utf-8');
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -43,8 +44,26 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+// Validate captcha
+$userCaptcha = isset($_POST['captcha']) ? intval($_POST['captcha']) : -1;
+$correctAnswer = isset($_SESSION['captcha_answer']) ? intval($_SESSION['captcha_answer']) : null;
+
+// Clear captcha immediately to prevent reuse / replay attacks
+if (isset($_SESSION['captcha_answer'])) {
+    unset($_SESSION['captcha_answer']);
+}
+
+if ($correctAnswer === null || $userCaptcha !== $correctAnswer) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Incorrect captcha answer. Please try again.'
+    ]);
+    exit;
+}
+
 // Destination settings
-$to = "satamkundu67@gmail.com";
+$to = "hpwushu64011@gmail.com";
 $from = "no-reply@hpwushu.com";
 
 // Build HTML email template
