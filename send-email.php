@@ -132,7 +132,7 @@ $headers .= 'Reply-To: "' . $name . '" <' . $email . '>' . "\r\n";
 $headers .= 'X-Mailer: PHP/' . phpversion();
 
 // Send using standard PHP mail()
-if (@mail($to, "HP Wushu Website Query: " . $subject, $emailContent, $headers)) {
+if (mail($to, "HP Wushu Website Query: " . $subject, $emailContent, $headers)) {
     echo json_encode([
         'success' => true,
         'message' => 'Thank you! Your message has been sent successfully.'
