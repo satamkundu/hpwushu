@@ -131,8 +131,8 @@ $headers .= 'From: "HP Wushu Association" <' . $from . '>' . "\r\n";
 $headers .= 'Reply-To: "' . $name . '" <' . $email . '>' . "\r\n";
 $headers .= 'X-Mailer: PHP/' . phpversion();
 
-// Send using standard PHP mail()
-if (mail($to, "HP Wushu Website Query: " . $subject, $emailContent, $headers)) {
+// Send using standard PHP mail() with envelope sender parameter
+if (mail($to, "HP Wushu Website Query: " . $subject, $emailContent, $headers, "-f" . $from)) {
     echo json_encode([
         'success' => true,
         'message' => 'Thank you! Your message has been sent successfully.'
