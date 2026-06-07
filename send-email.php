@@ -140,7 +140,7 @@ try {
     $mail->Username   = $to;
     $mail->Password   = 'W1F)T2QWl%B&P)e}';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 465;
+    $mail->Port       = 587;
 
     $mail->SMTPDebug = 2;
     
