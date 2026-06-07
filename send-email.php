@@ -134,7 +134,13 @@ $mail = new PHPMailer(true);
 
 try {
     // Server settings - use standard local mail transport
-    $mail->isMail();
+    $mail->isSMTP();
+    $mail->Host       = 'mail.hpwushu.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $to;
+    $mail->Password   = 'W1F)T2QWl%B&P)e}';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 465;
     
     // Recipients
     $mail->setFrom($from, 'HP Wushu Association');
